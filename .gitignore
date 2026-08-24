@@ -1,6 +1,16 @@
+# OULAD / general research data
 data/raw/
 data/processed/
+
+# KDD Cup 2015 data
+KDDCup2015_research/data/raw/
+KDDCup2015_research/data/processed/
+KDDCup2015_research/data/features/
+
+# Python
 __pycache__/
 .ipynb_checkpoints/
 *.pyc
+
+# Large dataset archive
 OULAD.zip
