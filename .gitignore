@@ -4,7 +4,6 @@ data/processed/
 
 # KDD Cup 2015 data
 KDDCup2015_research/data/raw/
-KDDCup2015_research/data/processed/
 KDDCup2015_research/data/features/
 
 # Python

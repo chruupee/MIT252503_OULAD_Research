@@ -1,0 +1,6 @@
+Contribution_ID,Contribution,Description
+C1,Early-warning feature framework,"A four-week behavioural feature framework was developed using early interaction, activity and resource-engagement measures."
+C2,Cohort-robust evaluation,The framework was evaluated across OULAD and KDD Cup 2015 rather than relying on a single learning cohort.
+C3,Explainable prediction,Feature contribution analysis was incorporated to identify which early engagement behaviours most influenced predictions.
+C4,Cross-cohort transfer analysis,Bidirectional transfer experiments were conducted to examine whether predictive signal persisted across datasets.
+C5,Fairness-aware evaluation,Performance was examined across demographic subgroups rather than relying solely on aggregate model metrics.

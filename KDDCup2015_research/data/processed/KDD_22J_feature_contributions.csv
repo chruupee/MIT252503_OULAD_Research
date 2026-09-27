@@ -1,0 +1,5 @@
+Feature,Mean_Absolute_Contribution,Mean_Contribution,Relative_Importance_%
+active_days_4w,0.7873482,0.22234891,49.491913
+total_interactions_4w,0.38719082,0.1579592,24.338423
+unique_resources_4w,0.28385904,0.026506377,17.843094
+active_weeks_4w,0.1324643,0.038924243,8.326572

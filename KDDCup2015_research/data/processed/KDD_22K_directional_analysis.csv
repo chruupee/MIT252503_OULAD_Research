@@ -1,0 +1,5 @@
+Feature,Spearman_Correlation,Direction
+total_interactions_4w,-0.9475823009101241,Negative association with predicted dropout risk
+active_days_4w,-0.8643337332626299,Negative association with predicted dropout risk
+active_weeks_4w,-0.7528598506905207,Negative association with predicted dropout risk
+unique_resources_4w,-0.9228591206229569,Negative association with predicted dropout risk

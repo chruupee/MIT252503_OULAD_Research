@@ -1,0 +1,7 @@
+Future_ID,Area,Future_Work
+FW1,Calibration,Apply cohort-specific probability calibration and threshold selection.
+FW2,Temporal Modelling,Evaluate weekly or sequential behavioural features to model changes in engagement over time.
+FW3,External Validation,Validate the framework on additional learning platforms with more closely aligned outcome definitions.
+FW4,Intervention,Evaluate whether targeted interventions based on early predictions improve learner outcomes.
+FW5,Fairness,Investigate calibration and equalized-performance approaches for deployment across demographic groups.
+FW6,Explainability,Evaluate explanation stability across additional cohorts and different modelling approaches.

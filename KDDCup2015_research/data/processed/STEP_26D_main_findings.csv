@@ -1,0 +1,7 @@
+Finding_ID,Area,Finding,Evidence
+F1,Early Engagement,Higher early engagement was consistently associated with lower-risk outcomes across both OULAD and KDD Cup 2015.,"Total interactions, active days, active weeks and unique resources showed the same direction of association in both cohorts."
+F2,Predictive Modelling,Early engagement features provided measurable predictive discrimination in both learning cohorts.,OULAD XGBoost AU-ROC = 0.7971; KDD XGBoost AU-ROC = 0.8542 using 10-fold cross-validation.
+F3,Explainability,Temporal engagement measures were important contributors to model predictions.,"In the KDD XGBoost analysis, active_days_4w had the largest mean absolute contribution, followed by total_interactions_4w."
+F4,Cross-Cohort Consistency,The direction of association between early engagement and outcomes was consistent across the two cohorts.,All four aligned engagement features showed consistent direction across OULAD and KDD.
+F5,Cross-Cohort Transfer,"Predictive discrimination was retained when models were transferred between cohorts, but classification behaviour changed across cohorts.",OULAD → KDD AU-ROC = 0.7795; KDD → OULAD AU-ROC = 0.7470. Predicted positive-rate shifts were also observed.
+F6,Fairness,"Predictive performance varied across demographic subgroups, indicating the importance of subgroup-level evaluation.","Differences in FPR, FNR, precision and recall were observed across gender, age and disability groups."

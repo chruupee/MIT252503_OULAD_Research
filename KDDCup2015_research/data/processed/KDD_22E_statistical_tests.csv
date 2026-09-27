@@ -1,0 +1,5 @@
+Feature,Median_Not_Dropout,Median_Dropout,Median_Difference,U_Statistic,p_value
+total_interactions_4w,133.0,12.0,121.0,2007212610.5,0.0
+active_days_4w,5.0,1.0,4.0,1982774304.0,0.0
+active_weeks_4w,3.0,1.0,2.0,1894990291.5,0.0
+unique_resources_4w,30.0,6.0,24.0,1993040915.5,0.0

@@ -1,0 +1,11 @@
+Evidence_Area,Analysis,Metric,Value,Unit
+OULAD,XGBoost 10-fold CV,AU-ROC,0.7971,Score
+OULAD,XGBoost 10-fold CV,F1,0.717,Score
+KDD Cup 2015,XGBoost 10-fold CV,AU-ROC,0.8542,Score
+KDD Cup 2015,XGBoost 10-fold CV,F1,0.9172,Score
+OULAD → KDD,Cross-Cohort Transfer,AU-ROC,0.7795,Score
+KDD → OULAD,Cross-Cohort Transfer,AU-ROC,0.747,Score
+Cross-Cohort,Direction Consistency,Consistent Features,100.0,Percent
+KDD Explainability,XGBoost Contributions,Active Days Contribution,49.49,Percent
+OULAD → KDD,Positive Rate Shift,Predicted − Actual,14.79,Percentage points
+KDD → OULAD,Positive Rate Shift,Predicted − Actual,-10.42,Percentage points

@@ -1,0 +1,7 @@
+Limitation_ID,Area,Limitation,Implication
+L1,Outcome Definition,OULAD At-Risk and KDD Dropout are not identical outcome definitions.,Cross-cohort transfer should be interpreted as exploratory rather than as direct external validation of the same target.
+L2,Observational Data,The datasets are observational and cannot establish causal relationships between engagement and dropout or risk.,Observed associations should not be interpreted as evidence that increasing engagement will necessarily prevent dropout.
+L3,Feature Scope,The cross-cohort analysis used four aligned behavioural features.,"Other potentially important contextual, demographic or platform-specific variables were not included in the transfer analysis."
+L4,Distribution Shift,"The cohorts differ in platform structure, population, outcome prevalence and feature distributions.",A decision threshold calibrated on one cohort may not be appropriate for another cohort.
+L5,Fairness Groups,Some demographic subgroups contained substantially fewer observations.,"Subgroup metrics, particularly for small groups, should be interpreted cautiously."
+L6,Intervention Validation,The study evaluates predictive identification rather than the effectiveness of real-world interventions.,Future research should evaluate whether predictions lead to measurable improvements when linked to appropriate interventions.

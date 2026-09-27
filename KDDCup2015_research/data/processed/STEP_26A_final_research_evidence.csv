@@ -1,0 +1,17 @@
+Evidence_Area,Analysis,Model_or_Feature,Metric_or_Result,Value,Interpretation
+OULAD Model Performance,10-fold Cross-Validation,Logistic Regression,AU-ROC,0.7732,Stable predictive discrimination across folds
+OULAD Model Performance,10-fold Cross-Validation,Random Forest,AU-ROC,0.7688,Stable predictive discrimination across folds
+OULAD Model Performance,10-fold Cross-Validation,XGBoost,AU-ROC,0.7971,Strongest AU-ROC among evaluated OULAD models
+KDD Model Performance,10-fold Cross-Validation,Logistic Regression,AU-ROC,0.8532,Stable predictive discrimination across folds
+KDD Model Performance,10-fold Cross-Validation,Random Forest,AU-ROC,0.8039,Stable predictive discrimination across folds
+KDD Model Performance,10-fold Cross-Validation,XGBoost,AU-ROC,0.8542,Highest AU-ROC among evaluated KDD models
+Explainability,XGBoost Feature Contribution,active_days_4w,Relative contribution,49.49,Largest mean absolute contribution among aligned KDD features
+Explainability,XGBoost Feature Contribution,total_interactions_4w,Relative contribution,24.34,Second-largest mean absolute contribution
+Explainability,XGBoost Feature Contribution,unique_resources_4w,Relative contribution,17.84,Third-largest mean absolute contribution
+Cross-Cohort Consistency,Direction Consistency,Four aligned engagement features,Consistent directions,100.0,All four features showed the same direction in both cohorts
+Cross-Cohort Consistency,Effect Size,Four aligned engagement features,OULAD mean Cliff's delta,0.4638,Medium-to-large distributional separation across features
+Cross-Cohort Consistency,Effect Size,Four aligned engagement features,KDD mean Cliff's delta,0.651,Large distributional separation across features
+Cross-Cohort Transfer,OULAD → KDD,Logistic Regression,AU-ROC,0.7795,Predictive signal retained across cohorts
+Cross-Cohort Transfer,KDD → OULAD,Logistic Regression,AU-ROC,0.747,Predictive signal retained across cohorts
+Cross-Cohort Transfer,OULAD → KDD,Logistic Regression,Positive-rate difference,14.79,Predicted positive rate exceeded target prevalence
+Cross-Cohort Transfer,KDD → OULAD,Logistic Regression,Positive-rate difference,-10.42,Predicted positive rate was below target prevalence
