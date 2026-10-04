@@ -1,0 +1,106 @@
+# =====================================================================
+# MIT252503 - Predictive analytics framework for at-risk identification
+# Protocol configuration v1.1 (Chapter 6, Sections 6.5-6.8)
+# Every constant used by src/ is read from this file. After supervisor
+# sign-off of Appendix V this file is hashed into outputs/protocol_lock.json
+# and may not change before the one-time sealed evaluation (s08).
+# =====================================================================
+protocol_version: "1.1"
+seed: 42
+data:
+  raw_dir: data/raw/oulad
+  na_values: ["?", ""]
+
+prediction:
+  t0_day: 28                 # prediction issued at the start of course day 28
+  window: [0, 27]            # features use only records dated 0..27 inclusive
+  pre_course_window: [-25, -1]
+  weeks: {W1: [0, 6], W2: [7, 13], W3: [14, 20], W4: [21, 27]}
+
+eligibility:
+  # E1 joinable; E2 date_registration known and < t0_day;
+  # E3 still registered: date_unregistration missing or > t0_day  (primary, CC-7)
+  # Day-28 boundary: an unregistration stamped day 28 is treated as realised on the
+  # prediction day (zero lead time) and excluded. Sensitivity S-BOUND includes it.
+  unregistration_strictly_after: 28
+  sensitivity_boundary_unregistration_strictly_after: 27
+
+labels:
+  primary: {name: at_risk, positive: ["Fail", "Withdrawn"]}      # Objective 1 (approved)
+  secondary: {name: withdrawn, positive: ["Withdrawn"]}          # CC-1
+
+periods: {P1: "2013B", P2: "2013J", P3: "2014B", P4: "2014J"}
+sealed_period: P4
+folds:
+  F1: {train: [P1], validate: P2, role: primary}
+  F2: {train: [P1], validate: P3, role: primary}
+  F3: {train: [P1, P2], validate: P3, role: sensitivity}   # not label-latency safe
+final: {train: [P1, P2, P3], test: P4}
+
+vle:
+  collapse_exact_duplicates: true   # primary (CC-6); sensitivity keeps them
+
+preprocessing:                      # frozen primary path (Rubric item 4)
+  imputation: median_with_indicator # f21-f24 only, fitted on training rows
+  scaling: standard                 # LASSO only
+  class_treatment: class_weight     # primary; SMOTE is sensitivity-only
+  smote_sensitivity: true
+
+lasso:
+  penalty: l1
+  solver: liblinear
+  C_grid: [0.001, 0.01, 0.1, 1, 10, 100]
+  class_weight: balanced
+
+xgboost:
+  optuna_trials: 60
+  sampler: TPE
+  early_stopping_rounds: 50
+  max_estimators: 2000
+  search_space:
+    max_depth: [3, 6]
+    learning_rate: [0.01, 0.3]       # log scale
+    min_child_weight: [1, 10]
+    subsample: [0.6, 1.0]
+    colsample_bytree: [0.6, 1.0]
+    reg_lambda: [0.001, 10.0]        # log scale
+    gamma: [0.0, 5.0]
+  scale_pos_weight: neg_over_pos_of_training_rows
+  final_n_estimators: mean_best_iteration_over_primary_folds
+
+thresholds:                          # derived from pooled F1+F2 OOF predictions only
+  youden: true
+  top_k_share: 0.20
+
+calibration:
+  # Isotonic recalibration is applied to a model only if its pooled inner-fold
+  # (F1+F2 OOF) Brier score exceeds the constant-predictor Brier on the same rows.
+  rule: isotonic_if_oof_brier_exceeds_constant
+  calibrator_fit_on: pooled_F1_F2_oof
+  reliability_bins: 10
+
+evaluation:
+  primary_metric: auc
+  bootstrap: {resamples: 1000, unit: id_student, ci: 0.95, seed: 42}
+  practical_margin: 0.02             # CC-2
+  decision_rule: paired_delta_auc_four_branch
+  fairness:
+    attributes: [gender, age_band, imd_group]
+    imd_groups: {high_deprivation: ["0-10%", "10-20", "10-20%", "20-30%"],
+                 medium: ["30-40%", "40-50%", "50-60%"],
+                 low_deprivation: ["60-70%", "70-80%", "80-90%", "90-100%"]}
+    eod_screening_flag: 0.05         # CC-4: screening convention, not proof
+    small_group_flag: 100
+  shap: {top_k: 5, stability: jaccard_F1_vs_F2}
+
+sensitivities:                       # all pre-specified; reported separately
+  S1_secondary_label: withdrawn
+  S2_duplicates_retained: true
+  S3_repeat_students_removed: true
+  S4_boundary_rule: include_unregistration_on_day_28
+  S5_smote_instead_of_class_weight: true
+  S6_fold_F3: true
+
+cross_platform:                      # Objective 3 (CC-3)
+  shared_features: [f01, f02, f03, f04, f05, f06, f07, f08, f09]
+  criterion2_degradation: 0.05

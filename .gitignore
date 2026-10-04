@@ -13,3 +13,6 @@ __pycache__/
 
 # Large dataset archive
 OULAD.zip
+# OULAD pilot pre-seal / sealed evaluation artifacts
+oulad_pilot/outputs/protocol_lock.json
+oulad_pilot/outputs/rehearsal_*

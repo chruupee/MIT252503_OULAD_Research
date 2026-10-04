@@ -1,0 +1,78 @@
+{
+  "folds": {
+    "F1": {
+      "train": [
+        "P1"
+      ],
+      "validate": "P2",
+      "role": "primary",
+      "train_eligible": 4118,
+      "validate_eligible": 7679,
+      "strictly_forward": true,
+      "label_latency_safe": true,
+      "latest_train_end_month": 7.88,
+      "validation_t0_month": 8.92,
+      "modules_without_history": [
+        "AAA",
+        "EEE",
+        "GGG"
+      ],
+      "sealed_in_fold": false
+    },
+    "F2": {
+      "train": [
+        "P1"
+      ],
+      "validate": "P3",
+      "role": "primary",
+      "train_eligible": 4118,
+      "validate_eligible": 6506,
+      "strictly_forward": true,
+      "label_latency_safe": true,
+      "latest_train_end_month": 7.88,
+      "validation_t0_month": 12.92,
+      "modules_without_history": [
+        "CCC",
+        "EEE",
+        "GGG"
+      ],
+      "sealed_in_fold": false
+    },
+    "F3": {
+      "train": [
+        "P1",
+        "P2"
+      ],
+      "validate": "P3",
+      "role": "sensitivity",
+      "train_eligible": 11797,
+      "validate_eligible": 6506,
+      "strictly_forward": true,
+      "label_latency_safe": false,
+      "latest_train_end_month": 16.8,
+      "validation_t0_month": 12.92,
+      "modules_without_history": [
+        "CCC"
+      ],
+      "sealed_in_fold": false
+    },
+    "FINAL": {
+      "train": [
+        "P1",
+        "P2",
+        "P3"
+      ],
+      "validate": "P4",
+      "role": "final",
+      "train_eligible": 18303,
+      "validate_eligible": 9210,
+      "strictly_forward": true,
+      "label_latency_safe": true,
+      "latest_train_end_month": 19.92,
+      "validation_t0_month": 20.92,
+      "modules_without_history": [],
+      "sealed_in_fold": false
+    }
+  },
+  "assumption": "B presentations start ~February, J ~October; lengths from courses.csv"
+}

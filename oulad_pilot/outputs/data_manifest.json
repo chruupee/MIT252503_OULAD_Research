@@ -1,0 +1,15 @@
+{
+  "environment": {
+    "python": "3.12.4",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "pandas": "2.2.2",
+    "numpy": "1.26.4",
+    "scikit_learn": "1.4.2",
+    "xgboost": "3.4.2",
+    "scipy": "1.13.1",
+    "config_sha256": "afa92ebbc67bddf0f57703705c655766673b8aedc0ca263ed100d1fa9c939470",
+    "seed": 42
+  },
+  "tables": [],
+  "g1_smoke_test": "FAIL"
+}

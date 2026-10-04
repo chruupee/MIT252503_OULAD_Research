@@ -1,0 +1,79 @@
+{
+  "pooled_oof_n": 14185,
+  "pooled_oof_students": 13434,
+  "lasso": {
+    "youden_threshold": 0.4508306939934681,
+    "youden_on_training_oof": {
+      "tpr": 0.7864673485444532,
+      "fpr": 0.48582375478927203,
+      "flag_rate": 0.6205146281283046
+    },
+    "top20_threshold": 0.857492297724461,
+    "top20_on_training_oof": {
+      "tpr": 0.3400472069236821,
+      "fpr": 0.08633461047254151,
+      "flag_rate": 0.2
+    },
+    "pooled_oof_auc": 0.7187524831866784,
+    "pooled_oof_brier": 0.23749702785247717,
+    "pooled_constant_brier": 0.2472968797310429,
+    "isotonic_recalibration_triggered": false
+  },
+  "xgb": {
+    "youden_threshold": 0.49780726,
+    "youden_on_training_oof": {
+      "tpr": 0.7672698662470495,
+      "fpr": 0.4681992337164751,
+      "flag_rate": 0.6021854071201974
+    },
+    "top20_threshold": 0.6278626,
+    "top20_on_training_oof": {
+      "tpr": 0.31235247836349334,
+      "fpr": 0.10932311621966795,
+      "flag_rate": 0.20028198801550934
+    },
+    "pooled_oof_auc": 0.6949246528060387,
+    "pooled_oof_brier": 0.23618254438785233,
+    "pooled_constant_brier": 0.2472968797310429,
+    "isotonic_recalibration_triggered": false
+  },
+  "inner_paired_comparison": {
+    "delta_auc": -0.023827830380639736,
+    "ci": [
+      -0.027440281685477397,
+      -0.02062452179936381
+    ],
+    "student_clusters": 13434,
+    "branch_if_this_were_test": "BASELINE_BETTER",
+    "note": "pooled F1+F2 validation rows; selection evidence only; not an estimate of generalisation"
+  },
+  "shap_top5_jaccard_F1_F2": {
+    "jaccard": 1.0,
+    "top5_F1": [
+      "mean_score",
+      "prop_submitted_on_time",
+      "days_to_first_submission",
+      "cv_daily_clicks",
+      "highest_education"
+    ],
+    "top5_F2": [
+      "mean_score",
+      "prop_submitted_on_time",
+      "days_to_first_submission",
+      "cv_daily_clicks",
+      "highest_education"
+    ]
+  },
+  "shap_top5_jaccard_F2_F3": {
+    "jaccard": 0.42857142857142855,
+    "top5_F3": [
+      "mean_score",
+      "submission_rate",
+      "active_days",
+      "highest_education",
+      "days_to_first_submission"
+    ],
+    "note": "F1 and F2 share the P1 training set, so F1-F2 agreement is by construction; F2 (P1 model) vs F3 (P1+P2 model) on the same P3 rows is the informative comparison"
+  },
+  "S7_n_estimators_from_F3": 223
+}

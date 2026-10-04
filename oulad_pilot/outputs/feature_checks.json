@@ -1,0 +1,132 @@
+{
+  "checks": [
+    {
+      "id": "T01",
+      "check": "Registration key unique",
+      "result": "PASS",
+      "detail": "n=32,593"
+    },
+    {
+      "id": "T02",
+      "check": "studentInfo-studentRegistration join is 1:1 with no orphans",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "T03",
+      "check": "Eligibility flag reproduces E2 and E3 by independent recomputation",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "T04",
+      "check": "No modelling row has date_unregistration on or before day 28",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "T05",
+      "check": "Sealed period absent from the modelling file",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "T06",
+      "check": "Sealed labels blank in written tables",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "T07",
+      "check": "Label rule: at_risk = 1 iff Fail or Withdrawn",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "T08",
+      "check": "Exactly 28 features",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "T09",
+      "check": "Missing values only in the four declared assessment features",
+      "result": "PASS",
+      "detail": "nullable present: ['f21', 'f22', 'f23', 'f24']"
+    },
+    {
+      "id": "T10",
+      "check": "Ranges valid (f02 0-28 active days within window 0-27, f12 0-4, f04/f05 0-28, f21/f24 in 0-1, counts >= 0)",
+      "result": "PASS",
+      "detail": "f21 max = 1.00 (v1.1 definition: due-and-submitted / due)"
+    },
+    {
+      "id": "T11",
+      "check": "Zero-activity conventions hold",
+      "result": "PASS",
+      "detail": "910 rows (5.0%) had no clicks in the window"
+    },
+    {
+      "id": "T12",
+      "check": "Ten random registrations recomputed from raw rows match pipeline features",
+      "result": "PASS",
+      "detail": "10/10"
+    },
+    {
+      "id": "T13",
+      "check": "No presentation in two partitions",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "T14-F1",
+      "check": "Inner fold F1 strictly forward and sealed-free",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "T14-F2",
+      "check": "Inner fold F2 strictly forward and sealed-free",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "T14-F3",
+      "check": "Inner fold F3 strictly forward and sealed-free",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "T15",
+      "check": "Final split strictly forward (P1-P3 -> P4)",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "T16",
+      "check": "No VLE record dated after day 27 enters any window feature; pre-course records only from -25..-1",
+      "result": "PASS",
+      "detail": "max=27, min=-25"
+    },
+    {
+      "id": "T17",
+      "check": "No submission dated after day 27 enters any feature",
+      "result": "PASS",
+      "detail": "max=27"
+    },
+    {
+      "id": "T18",
+      "check": "Injection test: records dated 28 or 30 leave all 28 features unchanged; a record dated 27 changes f01 and sets f04 = 0",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "id": "T19",
+      "check": "Sealed-period features computed with identical code and window (no labels)",
+      "result": "PASS",
+      "detail": "n=9,210"
+    }
+  ],
+  "passed": 21,
+  "total": 21
+}

@@ -1,0 +1,39 @@
+[2026-10-04 15:37:21] s00 | STAGE 0: raw-data manifest and environment snapshot (Gate G1 smoke test)
+[2026-10-04 15:37:22] s00 | ENV python = 3.12.4
+[2026-10-04 15:37:22] s00 | ENV platform = Windows-11-10.0.26200-SP0
+[2026-10-04 15:37:22] s00 | ENV pandas = 2.2.2
+[2026-10-04 15:37:22] s00 | ENV numpy = 1.26.4
+[2026-10-04 15:37:22] s00 | ENV scikit_learn = 1.4.2
+[2026-10-04 15:37:22] s00 | ENV xgboost = 3.4.2
+[2026-10-04 15:37:22] s00 | ENV scipy = 1.13.1
+[2026-10-04 15:37:22] s00 | ENV config_sha256 = afa92ebbc67bddf0f57703705c655766673b8aedc0ca263ed100d1fa9c939470
+[2026-10-04 15:37:22] s00 | ENV seed = 42
+[2026-10-04 15:37:22] s00 | MISSING studentInfo
+[2026-10-04 15:37:22] s00 | MISSING studentRegistration
+[2026-10-04 15:37:22] s00 | MISSING studentVle
+[2026-10-04 15:37:22] s00 | MISSING vle
+[2026-10-04 15:37:22] s00 | MISSING studentAssessment
+[2026-10-04 15:37:22] s00 | MISSING assessments
+[2026-10-04 15:37:22] s00 | MISSING courses
+[2026-10-04 15:37:22] s00 | G1 smoke test FAIL: all 7 tables present, row counts match published counts, hashes recorded
+[2026-10-04 15:37:26] s05 | C=0.001: F1=0.6956 F2=0.7243 (F3 sens 0.7749) mean=0.7100
+[2026-10-04 15:37:26] s05 | C=0.01: F1=0.7034 F2=0.7340 (F3 sens 0.7726) mean=0.7187
+[2026-10-04 15:37:26] s05 | C=0.1: F1=0.7018 F2=0.7326 (F3 sens 0.7720) mean=0.7172
+[2026-10-04 15:37:27] s05 | C=1: F1=0.7009 F2=0.7318 (F3 sens 0.7720) mean=0.7164
+[2026-10-04 15:37:27] s05 | C=10: F1=0.7012 F2=0.7321 (F3 sens 0.7720) mean=0.7166
+[2026-10-04 15:37:27] s05 | C=100: F1=0.7013 F2=0.7321 (F3 sens 0.7720) mean=0.7167
+[2026-10-04 15:37:27] s05 | selected C (training-partition inner folds only) = 0.01; F1 AUC=0.703 Brier=0.245 (const 0.243); F2 AUC=0.734 Brier=0.228 (const 0.250); F3 AUC=0.773 Brier=0.194 (const 0.250)
+[2026-10-04 15:37:30] s06b | lasso: Youden t=0.4508 (TPR 0.786, FPR 0.486); top-20% t=0.8575; pooled OOF Brier 0.2375 vs constant 0.2473 -> isotonic not triggered
+[2026-10-04 15:37:30] s06b | xgb: Youden t=0.4978 (TPR 0.767, FPR 0.468); top-20% t=0.6279; pooled OOF Brier 0.2362 vs constant 0.2473 -> isotonic not triggered
+[2026-10-04 15:37:44] s06b | inner paired Delta-AUC (XGB - LASSO) = -0.0238 [-0.0274, -0.0206], 13,434 students (selection evidence only)
+[2026-10-04 15:37:44] s06b | SHAP top-5 Jaccard F2 vs F3 = 0.429; F3 ['mean_score', 'submission_rate', 'active_days', 'highest_education', 'days_to_first_submission']
+[2026-10-04 15:37:44] s06b | SHAP top-5 Jaccard F1 vs F2 = 1.000; F1 ['mean_score', 'prop_submitted_on_time', 'days_to_first_submission', 'cv_daily_clicks', 'highest_education']; F2 ['mean_score', 'prop_submitted_on_time', 'days_to_first_submission', 'cv_daily_clicks', 'highest_education']
+[2026-10-04 15:37:45] s06b | SENS Primary: F1 LASSO 0.703 XGB 0.691; F2 LASSO 0.734 XGB 0.704; F3 LASSO 0.773 XGB 0.774
+[2026-10-04 15:37:45] s06b | SENS S1: F1 LASSO 0.626 XGB 0.580; F2 LASSO 0.671 XGB 0.600
+[2026-10-04 15:37:45] s06b | SENS S2: F1 LASSO 0.703 XGB 0.689; F2 LASSO 0.734 XGB 0.703
+[2026-10-04 15:37:45] s06b | SENS S4: F1 LASSO 0.704 XGB 0.691; F2 LASSO 0.734 XGB 0.704
+[2026-10-04 15:37:46] s06b | SENS S5: F1 LASSO 0.751 XGB 0.719; F2 LASSO 0.772 XGB 0.733
+[2026-10-04 15:37:47] s06b | SENS S7: F1 LASSO 0.703 XGB 0.689; F2 LASSO 0.734 XGB 0.701
+[2026-10-04 15:37:47] s06b | SELECTION OUTPUTS COMPLETE - sealed period not accessed
+[2026-10-04 15:37:48] s07 | PROTOCOL LOCK written: config afa92ebbc67b..., 14 code files hashed; approval signed = False
+[2026-10-04 15:37:51] s07 | PROTOCOL LOCK written: config afa92ebbc67b..., 14 code files hashed; approval signed = False

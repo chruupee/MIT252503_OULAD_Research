@@ -1,0 +1,37 @@
+{
+  "selected_params": {
+    "max_depth": 6,
+    "learning_rate": 0.012194120467624555,
+    "min_child_weight": 7.630419458368707,
+    "subsample": 0.753039635759628,
+    "colsample_bytree": 0.6121876915711554,
+    "reg_lambda": 3.7853040974290026,
+    "gamma": 2.6994972811781244
+  },
+  "final_n_estimators": 33,
+  "best_trial": 55,
+  "mean_inner_auc_with_early_stopping": 0.6974330410477125,
+  "folds_fixed_n_estimators": [
+    {
+      "fold": "F1",
+      "role": "primary",
+      "auc": 0.6894507336526262,
+      "brier": 0.23925422132015228,
+      "brier_constant": 0.24319412602033058
+    },
+    {
+      "fold": "F2",
+      "role": "primary",
+      "auc": 0.7008130491988936,
+      "brier": 0.23255705833435059,
+      "brier_constant": 0.24974447196179858
+    },
+    {
+      "fold": "F3",
+      "role": "sensitivity",
+      "auc": 0.7746987970042738,
+      "brier": 0.22309564054012299,
+      "brier_constant": 0.24974447196179858
+    }
+  ]
+}

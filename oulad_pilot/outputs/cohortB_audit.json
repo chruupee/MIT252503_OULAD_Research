@@ -1,0 +1,143 @@
+{
+  "manifest": [
+    {
+      "file": "kddcup2015_train_labelled.csv",
+      "content": "enrolment_id, username, course_id, dropout (from enrollment_train + truth_train)",
+      "rows": 120542,
+      "sha256": "5ade3d97a0217673d72c1ab0ba0c6c20531c85f50ce3e20c24ae2dd1e7ce833d"
+    },
+    {
+      "file": "kdd_analytical_4week.csv",
+      "content": "first-4-week aggregates per enrolment",
+      "rows": 120542,
+      "sha256": "e14807a07e3548fd15883ace8486fa37b7385d60fc02682c4297f1d15d8702de"
+    },
+    {
+      "file": "KDDCup2015_baseline_features.csv",
+      "content": "30-day event-type aggregates",
+      "rows": 120542,
+      "sha256": "34b16cb3df88ef871d400bf1a98764c8da034f3ad580baa1123f922e0fa4cd9b"
+    }
+  ],
+  "counts": {
+    "labelled_enrolments": 120542,
+    "unique_enrolment_ids": 120542,
+    "users": 79186,
+    "courses": 39,
+    "dropout_1": 95581,
+    "dropout_0": 24961,
+    "dropout_rate": 0.7929269466244131,
+    "missing_labels": 0,
+    "enrolments_per_user_max": 27
+  },
+  "per_course_summary": {
+    "size": {
+      "count": 39.0,
+      "mean": 3090.821,
+      "std": 2838.764,
+      "min": 645.0,
+      "25%": 1237.5,
+      "50%": 2008.0,
+      "75%": 3507.5,
+      "max": 12004.0
+    },
+    "mean": {
+      "count": 39.0,
+      "mean": 0.827,
+      "std": 0.063,
+      "min": 0.661,
+      "25%": 0.796,
+      "50%": 0.829,
+      "75%": 0.868,
+      "max": 0.929
+    }
+  },
+  "nine_feature_mapping": [
+    {
+      "id": "f01",
+      "oulad": "total_clicks (sum_click)",
+      "kdd_source": "total_interactions (event count)",
+      "computable_from_held_processed_files": true,
+      "semantic_match": "partial: events, not clicks"
+    },
+    {
+      "id": "f02",
+      "oulad": "active_days",
+      "kdd_source": "active_days",
+      "computable_from_held_processed_files": true,
+      "semantic_match": "yes (window 30 vs 28 days)"
+    },
+    {
+      "id": "f03",
+      "oulad": "mean_clicks_per_active_day",
+      "kdd_source": "f01/f02",
+      "computable_from_held_processed_files": true,
+      "semantic_match": "partial"
+    },
+    {
+      "id": "f04",
+      "oulad": "days_since_last_click",
+      "kdd_source": "log_train timestamps",
+      "computable_from_held_processed_files": false,
+      "semantic_match": "yes, needs raw log"
+    },
+    {
+      "id": "f05",
+      "oulad": "days_to_first_click",
+      "kdd_source": "log_train timestamps + date.csv course start",
+      "computable_from_held_processed_files": false,
+      "semantic_match": "yes, needs raw log"
+    },
+    {
+      "id": "f06",
+      "oulad": "weekly_decay_ratio",
+      "kdd_source": "log_train daily counts",
+      "computable_from_held_processed_files": false,
+      "semantic_match": "yes, needs raw log"
+    },
+    {
+      "id": "f07",
+      "oulad": "cv_daily_clicks",
+      "kdd_source": "log_train daily counts",
+      "computable_from_held_processed_files": false,
+      "semantic_match": "yes, needs raw log"
+    },
+    {
+      "id": "f08",
+      "oulad": "forum_clicks (forumng)",
+      "kdd_source": "discussion_events",
+      "computable_from_held_processed_files": true,
+      "semantic_match": "partial"
+    },
+    {
+      "id": "f09",
+      "oulad": "quiz_clicks (quiz)",
+      "kdd_source": "problem_events",
+      "computable_from_held_processed_files": true,
+      "semantic_match": "partial"
+    }
+  ],
+  "computable_now": [
+    "f01",
+    "f02",
+    "f03",
+    "f08",
+    "f09"
+  ],
+  "harmonisation_limits": {
+    "outcome": "OULAD at_risk = Fail or Withdrawn at presentation end; KDD dropout = no activity in the 10 days after a 30-day window. The two labels are not the same construct; Objective 1's 'common definition' can only be an aligned disengagement proxy.",
+    "window": "OULAD days 0-27 from presentation start; KDD 30 days from course start (date.csv). Truncation to days 0-27 requires the raw log.",
+    "unit": "OULAD sum_click per site-day; KDD one row per logged event (access, navigate, problem, video, discussion, wiki, page_close).",
+    "population": "KDD has no registration/unregistration dates, so the day-28 eligibility rule cannot be applied; no demographics (no fairness analysis)."
+  },
+  "raw_files_held_by_student_not_in_repository": [
+    "enrollment_train.csv",
+    "log_train.csv (589.63 MB)",
+    "truth_train.csv",
+    "enrollment_test.csv",
+    "log_test.csv (389.51 MB)",
+    "truth_test.csv",
+    "date.csv",
+    "object.csv"
+  ]
+}

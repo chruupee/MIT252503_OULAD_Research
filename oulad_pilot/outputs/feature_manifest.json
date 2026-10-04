@@ -1,0 +1,55 @@
+{
+  "version": "1.1",
+  "window": [
+    0,
+    27
+  ],
+  "features": {
+    "f01": "total_clicks",
+    "f02": "active_days",
+    "f03": "mean_clicks_per_active_day",
+    "f04": "days_since_last_click",
+    "f05": "days_to_first_click",
+    "f06": "weekly_decay_ratio",
+    "f07": "cv_daily_clicks",
+    "f08": "forum_clicks",
+    "f09": "quiz_clicks",
+    "f10": "unique_resources",
+    "f11": "unique_activity_types",
+    "f12": "active_weeks",
+    "f13": "oucontent_clicks",
+    "f14": "resource_clicks",
+    "f15": "homepage_clicks",
+    "f16": "pre_course_clicks",
+    "f17": "log_growth_w2_w1",
+    "f18": "log_growth_w3_w2",
+    "f19": "log_growth_w4_w3",
+    "f20": "n_assessments_submitted",
+    "f21": "submission_rate",
+    "f22": "mean_score",
+    "f23": "days_to_first_submission",
+    "f24": "prop_submitted_on_time",
+    "f25": "highest_education",
+    "f26": "num_of_prev_attempts",
+    "f27": "studied_credits",
+    "f28": "registration_earliness"
+  },
+  "audit": {
+    "vle_rows_in_range": 2716292,
+    "vle_exact_duplicates_in_range": 167168,
+    "max_vle_date_used_in_window_features": 27,
+    "min_vle_date_used": -25,
+    "max_submission_date_used": 27
+  },
+  "nullable": [
+    "f21",
+    "f22",
+    "f23",
+    "f24"
+  ],
+  "fairness_only_not_predictors": [
+    "gender",
+    "age_band",
+    "imd_band"
+  ]
+}

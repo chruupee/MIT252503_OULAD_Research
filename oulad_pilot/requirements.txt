@@ -1,0 +1,11 @@
+# Versions used for the pilot run recorded in outputs/run_log.txt
+# python 3.12
+pandas==3.0.2
+numpy==2.4.4
+scikit-learn==1.8.0
+xgboost==3.4.1
+scipy==1.17.1
+matplotlib==3.10.8
+PyYAML==6.0.3
+optuna==5.0.0
+pytest>=8

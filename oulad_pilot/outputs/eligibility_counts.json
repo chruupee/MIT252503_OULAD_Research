@@ -1,0 +1,71 @@
+{
+  "by_period": [
+    {
+      "period": "P1",
+      "presentation": "2013B",
+      "registrations": 4684,
+      "already_left_by_t0": 558,
+      "left_before_day0": 284,
+      "no_registration_date": 8,
+      "registered_on_or_after_t0": 4,
+      "unregistered_on_day_28": 5,
+      "eligible": 4118,
+      "eligible_at_risk_rate": 0.4917,
+      "eligible_withdrawn_rate": 0.1916,
+      "all_reg_withdrawn_rate": 0.2878,
+      "already_left_withdrawn": "558/558"
+    },
+    {
+      "period": "P2",
+      "presentation": "2013J",
+      "registrations": 8845,
+      "already_left_by_t0": 1162,
+      "left_before_day0": 690,
+      "no_registration_date": 10,
+      "registered_on_or_after_t0": 3,
+      "unregistered_on_day_28": 4,
+      "eligible": 7679,
+      "eligible_at_risk_rate": 0.4175,
+      "eligible_withdrawn_rate": 0.1581,
+      "all_reg_withdrawn_rate": 0.2678,
+      "already_left_withdrawn": "1154/1162"
+    },
+    {
+      "period": "P3",
+      "presentation": "2014B",
+      "registrations": 7804,
+      "already_left_by_t0": 1291,
+      "left_before_day0": 809,
+      "no_registration_date": 18,
+      "registered_on_or_after_t0": 6,
+      "unregistered_on_day_28": 3,
+      "eligible": 6506,
+      "eligible_at_risk_rate": 0.484,
+      "eligible_withdrawn_rate": 0.2029,
+      "all_reg_withdrawn_rate": 0.3348,
+      "already_left_withdrawn": "1291/1291"
+    },
+    {
+      "period": "P4",
+      "presentation": "2014J",
+      "registrations": 11260,
+      "already_left_by_t0": 2044,
+      "left_before_day0": 895,
+      "no_registration_date": 9,
+      "registered_on_or_after_t0": 5,
+      "unregistered_on_day_28": 3,
+      "eligible": 9210
+    }
+  ],
+  "total": {
+    "registrations": 32593,
+    "already_left_by_t0": 5055,
+    "eligible": 27513,
+    "any_reason_excluded": 5080,
+    "left_before_day0": 2678,
+    "unregistered_on_day_28": 15,
+    "eligible_if_day28_unregistrations_included": 27528,
+    "training_eligible_at_risk_rate": 0.4578,
+    "training_eligible_withdrawn_rate": 0.1816
+  }
+}

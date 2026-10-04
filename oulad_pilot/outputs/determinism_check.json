@@ -1,0 +1,5 @@
+{
+  "determinism_check": "two consecutive clean runs of run_pilot.sh",
+  "files_compared": "features_nonsealed.csv, features_sealed_nolabels.csv, oof_lasso.csv, oof_xgb.csv, xgb_optuna_trials.csv, selection_outputs.json, rehearsal_test_predictions.csv",
+  "result": "identical MD5"
+}

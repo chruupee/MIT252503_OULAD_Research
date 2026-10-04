@@ -1,0 +1,41 @@
+{
+  "selected_C": 0.01,
+  "folds": [
+    {
+      "fold": "F1",
+      "role": "primary",
+      "train_n": 4118,
+      "val_n": 7679,
+      "val_rate": 0.41750227894257064,
+      "auc": 0.7033505531699937,
+      "brier": 0.24524944272095894,
+      "brier_constant": 0.24319412602033058,
+      "nonzero": 31,
+      "inputs": 31
+    },
+    {
+      "fold": "F2",
+      "role": "primary",
+      "train_n": 4118,
+      "val_n": 6506,
+      "val_rate": 0.48401475561020596,
+      "auc": 0.7339705651008358,
+      "brier": 0.22834689047542958,
+      "brier_constant": 0.24974447196179858,
+      "nonzero": 31,
+      "inputs": 31
+    },
+    {
+      "fold": "F3",
+      "role": "sensitivity",
+      "train_n": 11797,
+      "val_n": 6506,
+      "val_rate": 0.48401475561020596,
+      "auc": 0.7726253318807063,
+      "brier": 0.19353524293622412,
+      "brier_constant": 0.24974447196179858,
+      "nonzero": 32,
+      "inputs": 32
+    }
+  ]
+}
